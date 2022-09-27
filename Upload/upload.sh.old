@@ -1,0 +1,30 @@
+#!/bin/bash
+# function serverchan(){
+#     curl -X POST -d "" -- http://xxxxxxxxxxxxxx
+# }
+# file_path=$*
+# file_name_text=${1##*/}
+# size=$(du -sh $file_path | awk '{print $1}')
+# push_title="🎥录像开始上传至bilibili"
+# push_desp="$file_name_text等共$#P\n大小$size\n$(date)"
+# serverchan
+/root/biliuprs/biliup upload \
+  --copyright 1 \
+  --cover "/root/biliuprs/livecover.jpg" \
+  --desc "@流云心Aurora 的FF14录像" \
+  --line qn \
+  --no-reprint 1 \
+  --open-elec 0 \
+  --tag "直播录像","FF14" \
+  --tid 65 \
+  --title "【流云心】title xx-xx-xx [FFXIV]" \
+  $file_path
+# if [ $? -eq 0 ]
+#   then
+#     push_title="✔️成功上传至📺bilibili✔️"
+#     push_desp="请等待审核👀和机器人推送🤖\n$(date)"
+#   else
+#     push_title="❌上传出现问题❌"
+#     push_desp="错读代码为 $?\n请检查日志👀\n$(date)"
+# fi
+# serverchan

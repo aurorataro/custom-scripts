@@ -1,0 +1,40 @@
+import sys
+import requests
+import os
+import time
+
+
+def push_nonebot(push_title, push_desp):
+    data = {"token": "xxxxxxxx", "title": push_title, "content": push_desp,
+            "send_to": "xxxxxxxxxx"#, "send_to_group": "xxxxxxxxxx"
+            }
+    requests.post('http://xxxxxxxxxxxxxx', json=data)
+    return
+
+
+def get_FileSize(file_path_first):
+    size = os.path.getsize(file_path_first)
+    size = size/float(1024*1024)
+    return round(size, 2)
+
+
+(spcrit, file_path) = sys.argv
+(tmpfilepath, file_name_first) = os.path.split(file_path1)
+get_FileSize(file_path1)
+push_title = "🎥录像开始上传至BILIBILI"
+push_desp = file_name_first+' 等...\n共' + \
+    str(len(sys.argv)-1)+'P\n' + \
+    str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+push_nonebot(push_title, push_desp)
+command = '/root/biliuprs/biliup upload --copyright 1 --cover "/root/biliuprs/livecover.jpg" --desc "@流云心Aurora 的FF14录像" --line qn --no-reprint 1 --tag "直播录像","FF14" --tid 65 --title "【流云心】title xx-xx-xx [FFXIV]" '
+upload = command + file_path
+code = os.system(upload)
+if code == 0:
+    push_title = "✔️成功上传至📺BILIBILI✔️"
+    push_desp = "请等待审核👀和机器人推送🤖\n" + \
+        str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+else:
+    push_title = "❌上传出现问题❌"
+    push_desp = "错读代码为"+str(code)+"\n请检查日志👀\n" + \
+        str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+push_nonebot(push_title, push_desp)

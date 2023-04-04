@@ -1,0 +1,1 @@
+rclone mount Onedrive:Public/Media/Record/OBS /home/aurora/Onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --daemon

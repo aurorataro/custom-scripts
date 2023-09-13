@@ -1,0 +1,4 @@
+- *.{log,old}
++ /*.{dat,cfg}
++ /FFXIV_CHR0040000BE01052D0/**
+- /**

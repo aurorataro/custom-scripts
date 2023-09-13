@@ -1,0 +1,3 @@
+rclone sync "D:\Data\Aurorataro" onedrive:Public/Personal/Aurorataro --transfers 8 --progress
+rclone sync "D:\Data\FFXIV\FFXIV screenshot" onedrive:Public/Personal/Sync/FinalFantansy/screenshots --transfers 8 --progress
+rclone sync "E:\Game\FF14\◊Ó÷’ª√œÎXIV\game\My Games\FINAL FANTASY XIV - A Realm Reborn" onedrive:Public/Personal/Sync/FinalFantansy/config --filter-from "filter-list.txt" --transfers 8 --progress
